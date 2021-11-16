@@ -1,0 +1,40 @@
+DECLARE str1, alpha : STRING
+DECLARE count, alphapos :INTEGER 
+DECLARE thischar : CHAR
+DECLARE isPangram : BOOLEAN
+
+isPangram <-- True
+str1 <-- ""
+count <-- 0
+thischar <-- ''
+alphapos <-- 0
+alpha<-- "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+INPUT "Enter the sentence: ", str1
+str1 <-- UCase(str1)
+
+FOR count= 1 TO LENGTH(alpha)
+thischar <-- MID(alpha, count, 1)
+alphapos= LOCATE(str1, thischar)
+IF alphapos = 0 
+THEN isPangram <-- FAlSE 
+EXIT FOR
+END IF 
+NEXT count 
+
+IF isPangram = FALSE 
+THEN OUTPUT "The sentence is not a pangram"
+ELSE OUTPUT "The sentence is a pangram "
+ENDIF
+
+END
+
+
+
+
+
+
+
+
+
+ 
