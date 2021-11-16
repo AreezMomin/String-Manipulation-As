@@ -1,0 +1,26 @@
+DECLARE str1, str2 : String
+DECLARE thischar, firstchar, char2 : CHAR
+DECLARE count1 : INTEGER
+
+str1 <-- ""
+str2 <-- ""
+thischar <-- ''
+firstchar <-- ''
+count1 <-- 0
+char2 <-- '*'
+
+INPUT "Enter the string: ", str1
+str1 <-- UCase(str1)
+firstchar <-- LEFT(str1, 1)
+str2 <-- firstchar
+
+FOR count1 = 1 TO LENGTH(str1)
+thischar <-- MID(str1, count1 + 1, 1)
+IF thischar = firstchar 
+THEN str2 <-- str2 + char2
+ELSE  str2 <-- str2 + thischar
+ENDIF
+Next count1
+END
+
+END
