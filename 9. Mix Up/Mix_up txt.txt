@@ -1,0 +1,41 @@
+DECLARE str1, str2, str3, str4 : STRING
+DECLARE char1, char2, thischar1, thischar2 : CHAR
+DECLARE count1, count2 : INTEGER
+
+str1 <-- ""
+str2 <-- ""
+str3 <-- ""
+str4 <-- ""
+char1 <-- ''
+char2 <-- ''
+thischar1 <-- ''
+thischar2 <-- ''
+count1 <-- 0 
+count2<-- 0
+
+INPUT "Enter the first word: ", str1
+INPUT "Enter the second word: ", str2
+
+
+char1 <-- LEFT(str1,1)
+char2 <-- LEFT(str2,1)
+
+str3 <-- char2
+str4 <-- char1
+
+FOR count1 = 2 TO LENGTH(str2)
+thischar1 <-- MID(str2,count1,1)
+str4 = str4 + thischar1
+NEXT count1
+
+FOR count2 = 2 TO LENGTH(str1)
+thischar2 <-- MID(str1,count2,1)
+str3 = str3 + thischar2
+NEXT count2
+
+OUTPUT "The processed string is: ", str3 + " " + str4
+
+
+
+
+
