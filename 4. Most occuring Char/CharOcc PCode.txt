@@ -1,0 +1,33 @@
+DECLARE highchar, char1, char2 : CHAR
+DECLARE count1, count2, Count, Highest : INTEGER
+DECLARE Sentence : STRING 
+
+Sentence <-- " " 
+highchar <-- ' '
+char1 <-- ''
+char2 <-- ''
+count1 <-- 0
+count2 <-- 0
+Count <-- 0
+Highest <-- 0
+
+INPUT "Enter the sentence please : " , Sentence
+
+FOR count1 = 1 TO LENGTH(Sentence)
+char1 = MID(Sentence, count1, 1)
+Count = 0
+char1 <-- UCASE(char1)
+For count2 = 1 To Len(Sentence
+char2 = Mid(Sentence, count2, 1)
+char2 <-- UCASE(char2)
+If char1 = char2 
+Then Count = Count + 1
+If Count > Highest 
+Then
+highchar <-- char2
+Highest <-- Count
+End If
+Next count2
+Next count1
+OUTPUT (highchar, " is occuring " , Highest " times in your sentence")
+END
