@@ -1,0 +1,57 @@
+DECLARE notstr, badstr, str1, str2 : STRING
+DECLARE count, notpos , badpos : INTEGER
+DECLARE char1 : CHAR
+
+notstr <-- ""
+badstr <-- ""
+str1 <-- ""
+str2 <-- ""
+count <-- 0
+notpos <-- 0
+badpos <-- 0
+char1 <-- ''
+
+INPUT "Enter the string: ",str1
+str1 <-- LCASE(str1)
+
+notpos <-- LOCATE(str1, notstr)
+IF notpos = 0 
+THEN OUTPUT "String does not contain the word 'not'"
+END
+ENDIF
+
+badpos <-- LOCATE(str1, badstr)
+IF badpos = 0 
+THEN OUTPUT "String does not contain the word 'bad'"
+END 
+ENDIF
+
+IF badpos < notpos 
+THEN OUTPUT "Inappropiate string. 'bad' comes before 'not'"
+END 
+ENDIF
+
+IF notpos < badpos 
+THEN 
+FOR count = 1 TO LENGTH(str1)
+char1 <-- MID(str1, count, 1)
+IF count = notpos 
+THEN count <-- count + (badpos + 3)
+str2 <-- str2 + "good"
+ELSE str2 <-- str2 + char1
+ENDIF 
+NEXT count
+ENDIF
+
+OUTPUT "The processed string is: ", str2
+END 
+
+
+
+
+
+
+
+
+
+
