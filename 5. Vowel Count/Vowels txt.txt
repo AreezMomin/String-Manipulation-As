@@ -1,0 +1,52 @@
+DECLARE str1 : STRING
+DELCARE count, Acount, Ecount, Icount, Ocount, Ucount : INTEGER
+DELCARE thischar : CHAR
+
+str1 <-- ""
+count <-- 0
+Acount <-- 0
+Ecount <-- 0
+Icount <-- 0
+Ocount <-- 0
+Ucount <-- 0
+thischar <-- ''
+
+INPUT "Enter a string : ", str1
+str1 <-- UCASE (str1)
+
+FOR count = 1 TO LENGTH(str1)
+thischar <-- MID( str1, count, 1)
+
+IF thischar = A 
+THEN Acount <-- Acount + 1
+
+ELSEIF thischar = E
+THEN Ecount <-- Ecount + 1
+
+ELSEIF thischar = O
+THEN Ocount <-- Ocount + 1
+
+ELSEIF thischar = I
+THEN Icount <-- Icount + 1
+
+ELSEIF thischar = U
+THEN Ucount <-- Ucount + 1
+ENDIF 
+NEXT count
+
+OUTPUT " The number of times A came in the string is: ", Acount
+OUTPUT " The number of times E came in the string is: ", Ecount
+OUTPUT " The number of times I came in the string is: ", Icount
+OUTPUT " The number of times O came in the string is: ", Ocount
+OUTPUT " The number of times U came in the string is: ", Ucount
+END
+
+
+
+
+
+
+
+
+
+
