@@ -1,0 +1,13 @@
+DECLARE donuts : INTEGER
+
+donuts <-- 0
+
+INPUT " Enter the number of donuts : " , donuts
+
+IF donuts < 10 
+THEN OUTPUT "The number of donuts ordered are: ", donuts
+ELSEIF donuts >= 10 
+THEN OUTPUT "The number of donuts are : many "
+ENDIF
+
+END
