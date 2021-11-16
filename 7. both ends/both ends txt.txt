@@ -1,0 +1,29 @@
+DECLARE str1, str2 : STRING
+DECLARE char1, char2, char3, char4 : CHAR
+
+str1 <-- ""
+str2 <-- ""
+char1 <-- ''
+char2 <-- ''
+char3 <-- ''
+char4 <-- ''
+
+INPUT "Enter a string: ", str1
+
+IF LENGTH(str1) <= 2
+THEN OUTPUT str1
+END
+ENDIF
+
+char1 = Mid(str1, (LENGTH(str1) - (LENGTH(str1)-1)), 1)
+char2 = Mid(str1, (LENGTH(str1) - (LENGTH(str1)-2)), 1)
+char3 = Mid(str1, (LENGTH(str1)-1) , 1)
+char4 = Mid(str1, LENGTH(str1), 1)
+
+
+str2 <-- char1 + char2 + char3 + char4
+
+OUTPUT str2
+
+
+
