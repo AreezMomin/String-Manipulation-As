@@ -1,0 +1,26 @@
+DECLARE str1, str2 : STRING
+DECLARE char1, char2 , thischar : INTEGER
+DECLARE count : CHAR
+
+str1 <-- ""
+str2 <-- ""
+char1 <-- ''
+char2 <-- ''
+thischar <-- ''
+count <-- 0
+
+INPUT " Enter the string ", str1
+INPUT " Enter the character to replace", char1
+INPUT " Enter the character to replace with", char2
+
+FOR count = 1 TO LENGTH(str1)
+thischar = MID( str1, count, 1)
+IF thischar = char1 
+THEN str2 = str2 + char2
+ELSE str2 = str2 + thischar
+ENDIF
+NEXT count
+
+OUTPUT " The processed string is: ", str2
+END 
+  
