@@ -1,0 +1,23 @@
+DECLARE str1, str2, ingStr : STRING
+
+str1 = ""
+str2 = ""
+ingStr = "ING"
+
+INPUT "Enter the string" , str1
+str1 <-- UCASE(str1)
+
+IF LENGTH(str1) < 3 
+THEN OUTPUT (str1)
+END
+ENDIF
+
+str2 <-- MID( str1, ((LENGTH(str1)-3)+1) , 3)
+
+IF str2 = ingStr 
+THEN str1 <-- str1 + "LY"
+ELSE str1 <-- str1 + ingStr 
+ENDIF 
+
+OUTPUT "The processed string is: ", str1
+END 
