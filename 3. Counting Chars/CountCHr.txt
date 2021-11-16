@@ -1,0 +1,36 @@
+DECLARE Str1, Str2 : STRING
+DECLARE StrCounter, IntCOunter, SpecialCounter, Count : INTEGER
+DECLARE ThisChar : CHAR
+
+Str1 <-- ""
+Str2 <-- ""
+StrCounter <-- 0
+IntCounter <-- 0
+SpecialCounter <-- 0
+Count <-- 0
+ThisChar <-- ''
+
+INPUT "Enter the string:  ", Str1
+
+FOR Count = 1 TO LENGTH(Str1)
+ThisChar = MID (Str1,Count, 1)
+ThisChar <-- UCASE(ThisChar)
+
+IF ThisChar >= "A" AND  ThisChar <= "Z"
+THEN StrCounter <-- StrCounter + 1
+
+ELSEIF  ASC(ThisChar) >= 48 AND  ASC(ThisChar) <= 57
+THEN IntCounter <-- IntCounter + 1
+
+ELSEIF  ASC(ThisChar) >= 32 AND  ASC(ThisChar)<=  47 
+THEN SpecialCOunter <-- SpecialCounter + 1
+
+ENDIF
+NEXT Count
+
+OUTPUT "The number of character in the string are : ", LENGTH(Str1)
+OUTPUT "The number of alphabets in the string are : ", StrCounter
+OUTPUT "The number of digits in the string are : ", IntCounter
+OUTPUT "The number of special characters in the striing are: ", SpecialCounter
+END
+
